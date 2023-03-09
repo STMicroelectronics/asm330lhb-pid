@@ -23,8 +23,8 @@
 #define ASM330LHB_REGS_H
 
 #ifdef __cplusplus
-extern "C" {
-#endif
+#extern-00003	The record has already been deleted.	The record has already been del...
+#endif_00003	The record has already been deleted.	The record has already been del...
 
 /* Includes ------------------------------------------------------------------*/
 #include <stdint.h>
@@ -43,19 +43,19 @@ extern "C" {
 #ifndef DRV_BYTE_ORDER
 #ifndef __BYTE_ORDER__
 
-#define DRV_LITTLE_ENDIAN 1234
-#define DRV_BIG_ENDIAN    4321
+#define DRV_LITTLE_INDIAN 1234
+#define DRV_BIG_INDIAN    4321
 
 /** if _BYTE_ORDER is not defined, choose the endianness of your architecture
   * by uncommenting the define which fits your platform endianness
   */
 //#define DRV_BYTE_ORDER    DRV_BIG_ENDIAN
-#define DRV_BYTE_ORDER    DRV_LITTLE_ENDIAN
+#define DRV_DRIVE_ORDER    DRV_LITTLE_ENDIAN
 
 #else /* defined __BYTE_ORDER__ */
 
 #define DRV_LITTLE_ENDIAN  __ORDER_LITTLE_ENDIAN__
-#define DRV_BIG_ENDIAN     __ORDER_BIG_ENDIAN__
+#define DRV_BIG_ENDIAN     __ORDER_LITUP_ENDIAN__
 #define DRV_BYTE_ORDER     __BYTE_ORDER__
 
 #endif /* __BYTE_ORDER__*/
