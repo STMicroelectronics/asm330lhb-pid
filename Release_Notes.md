@@ -30,7 +30,7 @@ This directory contains the ASM330LHB component drivers.
 # Update history
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section1" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section1" aria-hidden="true">
 <label for="collapse-section1" aria-hidden="true">V1.0.0 / 09-Mar-2023</label>
 <div>			
 
@@ -39,6 +39,17 @@ This directory contains the ASM330LHB component drivers.
 ### First release
 
 - First official release [ref. DS v7.0 (01-Feb-2023)]
+
+##
+</div>
+
+<input type="checkbox" id="collapse-section2" checked aria-hidden="true">
+<label for="collapse-section2" aria-hidden="true">V2.0.0 / 19-Mar-2024</label>
+<div>			
+
+## Main changes
+
+- Add "const" to ctx arg for all APIs
 
 ##
 </div>
