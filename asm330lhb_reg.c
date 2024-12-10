@@ -3254,6 +3254,7 @@ int32_t asm330lhb_pin_int1_route_set(const stmdev_ctx_t *ctx,
   {
     ret = asm330lhb_write_reg(ctx, ASM330LHB_MD1_CFG, (uint8_t *)&val->md1_cfg, 1);
   }
+
   if (ret == 0)
   {
     ret = asm330lhb_read_reg(ctx, ASM330LHB_INT_CFG1, (uint8_t *) &int_cfg1, 1);
