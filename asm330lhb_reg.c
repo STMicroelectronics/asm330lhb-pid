@@ -1884,61 +1884,7 @@ int32_t asm330lhb_mem_bank_get(const stmdev_ctx_t *ctx,
 int32_t asm330lhb_ln_pg_write_byte(const stmdev_ctx_t *ctx, uint16_t add,
                                    uint8_t *val)
 {
-  asm330lhb_page_rw_t page_rw;
-  asm330lhb_page_sel_t page_sel;
-  asm330lhb_page_address_t page_address;
-  int32_t ret;
-
-  ret = asm330lhb_mem_bank_set(ctx, ASM330LHB_EMBEDDED_FUNC_BANK);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  page_rw.page_rw = 0x02U; /* page_write enable */
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
-
-  ret += asm330lhb_read_reg(ctx, ASM330LHB_PAGE_SEL, (uint8_t *)&page_sel, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  page_sel.page_sel = (uint8_t)((add / 256U) & 0x0FU);
-  page_sel.not_used_01 = 1;
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_SEL,
-                            (uint8_t *)&page_sel, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  page_address.page_addr = (uint8_t)(add - (page_sel.page_sel * 256U));
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_ADDRESS,
-                            (uint8_t *)&page_address, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_VALUE, val, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  page_rw.page_rw = 0x00; /* page_write disable */
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
-
-exit:
-  ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
-  return ret;
+  return asm330lhb_ln_pg_write(ctx, add, val, 1);
 }
 
 /**
@@ -1970,6 +1916,7 @@ int32_t asm330lhb_ln_pg_write(const stmdev_ctx_t *ctx, uint16_t add,
     goto exit;
   }
 
+  /* set page write */
   ret = asm330lhb_read_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
   if (ret != 0)
   {
@@ -1977,6 +1924,8 @@ int32_t asm330lhb_ln_pg_write(const stmdev_ctx_t *ctx, uint16_t add,
   }
   page_rw.page_rw = 0x02U; /* page_write enable*/
   ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
+
+  /* select page */
   ret += asm330lhb_read_reg(ctx, ASM330LHB_PAGE_SEL, (uint8_t *)&page_sel, 1);
   if (ret != 0)
   {
@@ -1986,6 +1935,8 @@ int32_t asm330lhb_ln_pg_write(const stmdev_ctx_t *ctx, uint16_t add,
   page_sel.not_used_01 = 1;
   ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_SEL,
                             (uint8_t *)&page_sel, 1);
+
+  /* set page addr */
   page_address.page_addr = lsb;
   ret += asm330lhb_write_reg(ctx, ASM330LHB_PAGE_ADDRESS,
                              (uint8_t *)&page_address, 1);
@@ -2012,27 +1963,30 @@ int32_t asm330lhb_ln_pg_write(const stmdev_ctx_t *ctx, uint16_t add,
       {
         goto exit;
       }
+
+      page_sel.page_sel = msb;
+      page_sel.not_used_01 = 1; // Default value
+      ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_SEL,
+                                (uint8_t *)&page_sel, 1);
+      if (ret != 0)
+      {
+        goto exit;
+      }
     }
     lsb++;
 
-    page_sel.page_sel = msb;
-    page_sel.not_used_01 = 1;
-    ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_SEL,
-                              (uint8_t *)&page_sel, 1);
-    if (ret != 0)
-    {
-      goto exit;
-    }
   }
 
   page_sel.page_sel = 0;
-  page_sel.not_used_01 = 1;
+  page_sel.not_used_01 = 1; // Default value
   ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_SEL,
                             (uint8_t *)&page_sel, 1);
   if (ret != 0)
   {
     goto exit;
   }
+
+  /* unset page write*/
   ret = asm330lhb_read_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
   if (ret != 0)
   {
@@ -2069,6 +2023,7 @@ int32_t asm330lhb_ln_pg_read_byte(const stmdev_ctx_t *ctx, uint16_t add,
     goto exit;
   }
 
+  /* set page read */
   ret = asm330lhb_read_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
   if (ret != 0)
   {
@@ -2076,6 +2031,8 @@ int32_t asm330lhb_ln_pg_read_byte(const stmdev_ctx_t *ctx, uint16_t add,
   }
   page_rw.page_rw = 0x01U; /* page_read enable*/
   ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
+
+  /* select page */
   ret += asm330lhb_read_reg(ctx, ASM330LHB_PAGE_SEL, (uint8_t *)&page_sel, 1);
   if (ret != 0)
   {
@@ -2085,6 +2042,8 @@ int32_t asm330lhb_ln_pg_read_byte(const stmdev_ctx_t *ctx, uint16_t add,
   page_sel.not_used_01 = 1;
   ret = asm330lhb_write_reg(ctx, ASM330LHB_PAGE_SEL,
                             (uint8_t *)&page_sel, 1);
+
+  /* set page addr */
   page_address.page_addr = (uint8_t)(add - (page_sel.page_sel * 256U));
   ret += asm330lhb_write_reg(ctx, ASM330LHB_PAGE_ADDRESS,
                              (uint8_t *)&page_address, 1);
@@ -2092,7 +2051,11 @@ int32_t asm330lhb_ln_pg_read_byte(const stmdev_ctx_t *ctx, uint16_t add,
   {
     goto exit;
   }
+
+  /* read value */
   ret = asm330lhb_read_reg(ctx, ASM330LHB_PAGE_VALUE, val, 2);
+
+  /* unset page read */
   ret += asm330lhb_read_reg(ctx, ASM330LHB_PAGE_RW, (uint8_t *)&page_rw, 1);
   if (ret != 0)
   {
@@ -6149,6 +6112,7 @@ int32_t asm330lhb_emb_func_clk_dis_set(const stmdev_ctx_t *ctx, uint8_t val)
                              (uint8_t *)&page_sel, 1);
 
     page_sel.emb_func_clk_dis = val;
+    page_sel.not_used_01 = 1;
 
     if (ret == 0)
     {
