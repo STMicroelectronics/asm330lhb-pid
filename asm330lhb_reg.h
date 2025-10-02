@@ -2697,3 +2697,4 @@ int32_t asm330lhb_mlc_mag_sensitivity_get(const stmdev_ctx_t *ctx, uint16_t *val
 #endif
 
 #endif /* ASM330LHB_REGS_H */
+
