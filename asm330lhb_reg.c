@@ -5984,26 +5984,6 @@ int32_t asm330lhb_fsm_status_get(const stmdev_ctx_t *ctx,
 }
 
 /**
-  * @brief  prgsens_out: [get] Output value of all FSMs.
-  *
-  * @param  ctx_t *ctx: read / write interface definitions
-  * @param  uint8_t * : buffer that stores data read
-  *
-  */
-int32_t asm330lhb_fsm_out_get(const stmdev_ctx_t *ctx, uint8_t *buff)
-{
-  int32_t ret;
-  ret = asm330lhb_mem_bank_set(ctx, ASM330LHB_EMBEDDED_FUNC_BANK);
-  if (ret == 0)
-  {
-    ret = asm330lhb_read_reg(ctx, ASM330LHB_FSM_OUTS1, buff, 16);
-  }
-  ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
-
-  return ret;
-}
-
-/**
   * @brief  Interrupt status bit for FSM long counter timeout interrupt
   *         event.[get]
   *
@@ -6360,6 +6340,33 @@ int32_t asm330lhb_long_clr_get(const stmdev_ctx_t *ctx,
       *val = ASM330LHB_LC_NORMAL;
       break;
   }
+
+  return ret;
+}
+
+/**
+  * @brief  FSM output registers.[get]
+  *
+  * @param  ctx    Read / write interface definitions.(ptr)
+  * @param  val    Structure of registers from FSM_OUTS1 to FSM_OUTS16
+  * @retval        Interface status (MANDATORY: return 0 -> no Error).
+  *
+  */
+int32_t asm330lhb_fsm_out_get(const stmdev_ctx_t *ctx,
+                              asm330lhb_fsm_out_t *val)
+{
+  int32_t ret;
+
+  ret = asm330lhb_mem_bank_set(ctx, ASM330LHB_EMBEDDED_FUNC_BANK);
+
+  if (ret == 0)
+  {
+    ret = asm330lhb_read_reg(ctx, ASM330LHB_FSM_OUTS1,
+                             (uint8_t *)&val->fsm_outs1, 16);
+  }
+
+  ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
+
   return ret;
 }
 
