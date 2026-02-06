@@ -2429,65 +2429,20 @@ int32_t asm330lhb_den_enable_set(const stmdev_ctx_t *ctx,
 int32_t asm330lhb_den_enable_get(const stmdev_ctx_t *ctx,
                                  asm330lhb_den_xl_g_t *val);
 
-int32_t asm330lhb_den_mark_axis_x_set(const stmdev_ctx_t *ctx, uint8_t val);
-int32_t asm330lhb_den_mark_axis_x_get(const stmdev_ctx_t *ctx, uint8_t *val);
+int32_t asm330lhb_den_mark_axis_x_set(const stmdev_ctx_t *ctx,
+                                      uint8_t val);
+int32_t asm330lhb_den_mark_axis_x_get(const stmdev_ctx_t *ctx,
+                                      uint8_t *val);
 
-int32_t asm330lhb_den_mark_axis_y_set(const stmdev_ctx_t *ctx, uint8_t val);
-int32_t asm330lhb_den_mark_axis_y_get(const stmdev_ctx_t *ctx, uint8_t *val);
+int32_t asm330lhb_den_mark_axis_y_set(const stmdev_ctx_t *ctx,
+                                      uint8_t val);
+int32_t asm330lhb_den_mark_axis_y_get(const stmdev_ctx_t *ctx,
+                                      uint8_t *val);
 
-int32_t asm330lhb_den_mark_axis_z_set(const stmdev_ctx_t *ctx, uint8_t val);
-int32_t asm330lhb_den_mark_axis_z_get(const stmdev_ctx_t *ctx, uint8_t *val);
-
-int32_t asm330lhb_mag_sensitivity_set(const stmdev_ctx_t *ctx, uint16_t val);
-int32_t asm330lhb_mag_sensitivity_get(const stmdev_ctx_t *ctx, uint16_t *val);
-
-int32_t asm330lhb_mag_offset_set(const stmdev_ctx_t *ctx, int16_t *val);
-int32_t asm330lhb_mag_offset_get(const stmdev_ctx_t *ctx, int16_t *val);
-
-int32_t asm330lhb_mag_soft_iron_set(const stmdev_ctx_t *ctx, uint16_t *val);
-int32_t asm330lhb_mag_soft_iron_get(const stmdev_ctx_t *ctx, uint16_t *val);
-
-typedef enum
-{
-  ASM330LHB_Z_EQ_Y     = 0,
-  ASM330LHB_Z_EQ_MIN_Y = 1,
-  ASM330LHB_Z_EQ_X     = 2,
-  ASM330LHB_Z_EQ_MIN_X = 3,
-  ASM330LHB_Z_EQ_MIN_Z = 4,
-  ASM330LHB_Z_EQ_Z     = 5,
-} asm330lhb_mag_z_axis_t;
-int32_t asm330lhb_mag_z_orient_set(const stmdev_ctx_t *ctx,
-                                   asm330lhb_mag_z_axis_t val);
-int32_t asm330lhb_mag_z_orient_get(const stmdev_ctx_t *ctx,
-                                   asm330lhb_mag_z_axis_t *val);
-
-typedef enum
-{
-  ASM330LHB_Y_EQ_Y     = 0,
-  ASM330LHB_Y_EQ_MIN_Y = 1,
-  ASM330LHB_Y_EQ_X     = 2,
-  ASM330LHB_Y_EQ_MIN_X = 3,
-  ASM330LHB_Y_EQ_MIN_Z = 4,
-  ASM330LHB_Y_EQ_Z     = 5,
-} asm330lhb_mag_y_axis_t;
-int32_t asm330lhb_mag_y_orient_set(const stmdev_ctx_t *ctx,
-                                   asm330lhb_mag_y_axis_t val);
-int32_t asm330lhb_mag_y_orient_get(const stmdev_ctx_t *ctx,
-                                   asm330lhb_mag_y_axis_t *val);
-
-typedef enum
-{
-  ASM330LHB_X_EQ_Y     = 0,
-  ASM330LHB_X_EQ_MIN_Y = 1,
-  ASM330LHB_X_EQ_X     = 2,
-  ASM330LHB_X_EQ_MIN_X = 3,
-  ASM330LHB_X_EQ_MIN_Z = 4,
-  ASM330LHB_X_EQ_Z     = 5,
-} asm330lhb_mag_x_axis_t;
-int32_t asm330lhb_mag_x_orient_set(const stmdev_ctx_t *ctx,
-                                   asm330lhb_mag_x_axis_t val);
-int32_t asm330lhb_mag_x_orient_get(const stmdev_ctx_t *ctx,
-                                   asm330lhb_mag_x_axis_t *val);
+int32_t asm330lhb_den_mark_axis_z_set(const stmdev_ctx_t *ctx,
+                                      uint8_t val);
+int32_t asm330lhb_den_mark_axis_z_get(const stmdev_ctx_t *ctx,
+                                      uint8_t *val);
 
 typedef struct
 {
