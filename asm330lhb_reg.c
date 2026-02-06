@@ -6129,12 +6129,8 @@ int32_t asm330lhb_emb_fsm_en_get(const stmdev_ctx_t *ctx, uint8_t *val)
   {
     ret = asm330lhb_read_reg(ctx, ASM330LHB_EMB_FUNC_EN_B,
                              (uint8_t *)&emb_func_en_b, 1);
-  }
-  if (ret == 0)
-  {
+
     *val = emb_func_en_b.fsm_en;
-    ret = asm330lhb_write_reg(ctx, ASM330LHB_EMB_FUNC_EN_B,
-                              (uint8_t *)&emb_func_en_b, 1);
   }
 
   ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
