@@ -1088,6 +1088,13 @@ int32_t asm330lhb_all_sources_get(const stmdev_ctx_t *ctx,
     ret = asm330lhb_read_reg(ctx, ASM330LHB_STATUS_REG,
                              (uint8_t *)&val->status_reg, 1);
   }
+
+  if (ret == 0)
+  {
+    ret = asm330lhb_read_reg(ctx, ASM330LHB_MLC_STATUS_MAINPAGE,
+                             (uint8_t *)&val->mlc_status, 1);
+  }
+
   if (ret != 0)
   {
     return ret;
@@ -1112,16 +1119,6 @@ int32_t asm330lhb_all_sources_get(const stmdev_ctx_t *ctx,
   }
   ret = asm330lhb_read_reg(ctx, ASM330LHB_FSM_STATUS_B,
                            (uint8_t *)&val->fsm_status_b, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_MLC_STATUS,
-                           (uint8_t *)&val->mlc_status, 1);
-  if (ret != 0)
-  {
-    goto exit;
-  }
 
 exit:
   ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
