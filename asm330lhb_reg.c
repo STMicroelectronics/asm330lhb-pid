@@ -6394,7 +6394,7 @@ int32_t asm330lhb_fsm_data_rate_set(const stmdev_ctx_t *ctx,
   if (ret == 0)
   {
     emb_func_odr_cfg_b.not_used_01 = 3; /* set default values */
-    emb_func_odr_cfg_b.not_used_02 = 1; /* set default values */
+    emb_func_odr_cfg_b.not_used_02 = 2; /* set default values */
     emb_func_odr_cfg_b.fsm_odr = (uint8_t)val;
     ret = asm330lhb_write_reg(ctx, ASM330LHB_EMB_FUNC_ODR_CFG_B,
                               (uint8_t *)&emb_func_odr_cfg_b, 1);
