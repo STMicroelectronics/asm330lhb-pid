@@ -30,38 +30,26 @@ This directory contains the ASM330LHB component drivers.
 # Update history
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section1" aria-hidden="true">
-<label for="collapse-section1" aria-hidden="true">V1.0.0 / 09-Mar-2023</label>
+<input type="checkbox" id="collapse-section6" checked aria-hidden="true">
+<label for="collapse-section6" aria-hidden="true">V2.3.0 / 07-Oct-2025</label>
 <div>
 
 ## Main changes
 
-### First release
-
-- First official release [ref. DS v7.0 (01-Feb-2023)]
+- Aligned ln_pg_write/read implementations
+- Added checks before writes and membank setting
+- Adding CODE_OF_CONDUCT.md and SECURITY.md
 
 ##
 </div>
-
-<input type="checkbox" id="collapse-section2" aria-hidden="true">
-<label for="collapse-section2" aria-hidden="true">V2.0.0 / 19-Mar-2024</label>
+<input type="checkbox" id="collapse-section5" aria-hidden="true">
+<label for="collapse-section5" aria-hidden="true">V2.2.0 / 07-Jul-2025</label>
 <div>
 
 ## Main changes
 
-- Add "const" to ctx arg for all APIs
-
-##
-</div>
-
-<input type="checkbox" id="collapse-section3" aria-hidden="true">
-<label for="collapse-section3" aria-hidden="true">V2.0.1 / 11-Apr-2024</label>
-<div>
-
-## Main changes
-
-- updated README.md file with tag reference and mdelay description
-- Fixed code style (Artistic Style Version 3.4.13)
+- Fix driver formatting options
+- Added pointer to private data in stmdev_ctx_t
 
 ##
 </div>
@@ -79,30 +67,42 @@ This directory contains the ASM330LHB component drivers.
 ##
 </div>
 
-<input type="checkbox" id="collapse-section5" aria-hidden="true">
-<label for="collapse-section5" aria-hidden="true">V2.2.0 / 07-Jul-2025</label>
+<input type="checkbox" id="collapse-section3" aria-hidden="true">
+<label for="collapse-section3" aria-hidden="true">V2.0.1 / 11-Apr-2024</label>
 <div>
 
 ## Main changes
 
-- Fix driver formatting options
-- Added pointer to private data in stmdev_ctx_t
+- updated README.md file with tag reference and mdelay description
+- Fixed code style (Artistic Style Version 3.4.13)
 
 ##
 </div>
 
-<input type="checkbox" id="collapse-section6" checked aria-hidden="true">
-<label for="collapse-section6" aria-hidden="true">V2.3.0 / 07-Oct-2025</label>
+<input type="checkbox" id="collapse-section2" aria-hidden="true">
+<label for="collapse-section2" aria-hidden="true">V2.0.0 / 19-Mar-2024</label>
 <div>
 
 ## Main changes
 
-- Aligned ln_pg_write/read implementations
-- Added checks before writes and membank setting
-- Adding CODE_OF_CONDUCT.md and SECURITY.md
+- Add "const" to ctx arg for all APIs
 
 ##
 </div>
+
+<input type="checkbox" id="collapse-section1" aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true">V1.0.0 / 09-Mar-2023</label>
+<div>
+
+## Main changes
+
+### First release
+
+- First official release [ref. DS v7.0 (01-Feb-2023)]
+
+##
+</div>
+
 :::
 
 
