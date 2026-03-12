@@ -1381,7 +1381,7 @@ float_t asm330lhb_from_lsb_to_nsec(int32_t lsb);
 typedef enum
 {
   ASM330LHB_2g   = 0,
-  ASM330LHB_16g  = 1, /* if XL_FS_MODE = '1' -> ASM330LHB_2g */
+  ASM330LHB_16g  = 1,
   ASM330LHB_4g   = 2,
   ASM330LHB_8g   = 3,
 } asm330lhb_fs_xl_t;
