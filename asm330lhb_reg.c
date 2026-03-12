@@ -220,19 +220,19 @@ int32_t asm330lhb_xl_full_scale_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl1_xl.fs_xl)
   {
-    case ASM330LHB_2g:
+    case 0x00:
       *val = ASM330LHB_2g;
       break;
 
-    case ASM330LHB_16g:
+    case 0x01:
       *val = ASM330LHB_16g;
       break;
 
-    case ASM330LHB_4g:
+    case 0x02:
       *val = ASM330LHB_4g;
       break;
 
-    case ASM330LHB_8g:
+    case 0x03:
       *val = ASM330LHB_8g;
       break;
 
@@ -476,44 +476,46 @@ int32_t asm330lhb_xl_data_rate_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl1_xl.odr_xl)
   {
-    case ASM330LHB_XL_ODR_OFF:
+    case 0x00:
       *val = ASM330LHB_XL_ODR_OFF;
       break;
 
-    case ASM330LHB_XL_ODR_12Hz5:
+    case 0x01:
       *val = ASM330LHB_XL_ODR_12Hz5;
       break;
 
-    case ASM330LHB_XL_ODR_26Hz:
+    case 0x02:
       *val = ASM330LHB_XL_ODR_26Hz;
       break;
 
-    case ASM330LHB_XL_ODR_52Hz:
+    case 0x03:
       *val = ASM330LHB_XL_ODR_52Hz;
       break;
 
-    case ASM330LHB_XL_ODR_104Hz:
+    case 0x04:
       *val = ASM330LHB_XL_ODR_104Hz;
       break;
 
-    case ASM330LHB_XL_ODR_208Hz:
+    case 0x05:
       *val = ASM330LHB_XL_ODR_208Hz;
       break;
 
-    case ASM330LHB_XL_ODR_417Hz:
+    case 0x06:
       *val = ASM330LHB_XL_ODR_417Hz;
       break;
 
-    case ASM330LHB_XL_ODR_833Hz:
+    case 0x07:
       *val = ASM330LHB_XL_ODR_833Hz;
       break;
 
-    case ASM330LHB_XL_ODR_1667Hz:
+    case 0x08:
       *val = ASM330LHB_XL_ODR_1667Hz;
       break;
-    case ASM330LHB_XL_ODR_1Hz6:
+
+    case 0x11:
       *val = ASM330LHB_XL_ODR_1Hz6;
       break;
+
     default:
       *val = ASM330LHB_XL_ODR_OFF;
       break;
@@ -570,32 +572,32 @@ int32_t asm330lhb_gy_full_scale_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl2_g.fs_g)
   {
-    case ASM330LHB_125dps:
+    case 0x02:
       *val = ASM330LHB_125dps;
       break;
 
-    case ASM330LHB_250dps:
+    case 0x00:
       *val = ASM330LHB_250dps;
       break;
 
-    case ASM330LHB_500dps:
+    case 0x04:
       *val = ASM330LHB_500dps;
       break;
 
-    case ASM330LHB_1000dps:
+    case 0x08:
       *val = ASM330LHB_1000dps;
       break;
 
-    case ASM330LHB_2000dps:
+    case 0x12:
       *val = ASM330LHB_2000dps;
       break;
 
-    case ASM330LHB_4000dps:
+    case 0x01:
       *val = ASM330LHB_4000dps;
       break;
 
     default:
-      *val = ASM330LHB_125dps;
+      *val = ASM330LHB_250dps;
       break;
   }
 
@@ -833,39 +835,39 @@ int32_t asm330lhb_gy_data_rate_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl2_g.odr_g)
   {
-    case ASM330LHB_GY_ODR_OFF:
+    case 0x00:
       *val = ASM330LHB_GY_ODR_OFF;
       break;
 
-    case ASM330LHB_GY_ODR_12Hz5:
+    case 0x01:
       *val = ASM330LHB_GY_ODR_12Hz5;
       break;
 
-    case ASM330LHB_GY_ODR_26Hz:
+    case 0x02:
       *val = ASM330LHB_GY_ODR_26Hz;
       break;
 
-    case ASM330LHB_GY_ODR_52Hz:
+    case 0x03:
       *val = ASM330LHB_GY_ODR_52Hz;
       break;
 
-    case ASM330LHB_GY_ODR_104Hz:
+    case 0x04:
       *val = ASM330LHB_GY_ODR_104Hz;
       break;
 
-    case ASM330LHB_GY_ODR_208Hz:
+    case 0x05:
       *val = ASM330LHB_GY_ODR_208Hz;
       break;
 
-    case ASM330LHB_GY_ODR_417Hz:
+    case 0x06:
       *val = ASM330LHB_GY_ODR_417Hz;
       break;
 
-    case ASM330LHB_GY_ODR_833Hz:
+    case 0x07:
       *val = ASM330LHB_GY_ODR_833Hz;
       break;
 
-    case ASM330LHB_GY_ODR_1667Hz:
+    case 0x08:
       *val = ASM330LHB_GY_ODR_1667Hz;
       break;
 
@@ -978,11 +980,11 @@ int32_t asm330lhb_xl_offset_weight_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl6_c.usr_off_w)
   {
-    case ASM330LHB_LSb_1mg:
+    case 0x00:
       *val = ASM330LHB_LSb_1mg;
       break;
 
-    case ASM330LHB_LSb_16mg:
+    case 0x01:
       *val = ASM330LHB_LSb_16mg;
       break;
 
@@ -1042,11 +1044,11 @@ int32_t asm330lhb_xl_power_mode_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl6_c.xl_hm_mode)
   {
-    case ASM330LHB_HIGH_PERFORMANCE_MD:
+    case 0x00:
       *val = ASM330LHB_HIGH_PERFORMANCE_MD;
       break;
 
-    case ASM330LHB_LOW_NORMAL_POWER_MD:
+    case 0x01:
       *val = ASM330LHB_LOW_NORMAL_POWER_MD;
       break;
 
@@ -1106,11 +1108,11 @@ int32_t asm330lhb_gy_power_mode_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl7_g.g_hm_mode)
   {
-    case ASM330LHB_GY_HIGH_PERFORMANCE:
+    case 0x00:
       *val = ASM330LHB_GY_HIGH_PERFORMANCE;
       break;
 
-    case ASM330LHB_GY_NORMAL:
+    case 0x01:
       *val = ASM330LHB_GY_NORMAL;
       break;
 
@@ -1657,19 +1659,19 @@ int32_t asm330lhb_rounding_mode_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl5_c.rounding)
   {
-    case ASM330LHB_NO_ROUND:
+    case 0x00:
       *val = ASM330LHB_NO_ROUND;
       break;
 
-    case ASM330LHB_ROUND_XL:
+    case 0x01:
       *val = ASM330LHB_ROUND_XL;
       break;
 
-    case ASM330LHB_ROUND_GY:
+    case 0x02:
       *val = ASM330LHB_ROUND_GY;
       break;
 
-    case ASM330LHB_ROUND_GY_XL:
+    case 0x03:
       *val = ASM330LHB_ROUND_GY_XL;
       break;
 
@@ -1905,11 +1907,11 @@ int32_t asm330lhb_mem_bank_get(const stmdev_ctx_t *ctx,
 
   switch (func_cfg_access.reg_access)
   {
-    case ASM330LHB_USER_BANK:
+    case 0x00:
       *val = ASM330LHB_USER_BANK;
       break;
 
-    case ASM330LHB_EMBEDDED_FUNC_BANK:
+    case 0x01:
       *val = ASM330LHB_EMBEDDED_FUNC_BANK;
       break;
 
@@ -2195,11 +2197,11 @@ int32_t asm330lhb_data_ready_mode_get(const stmdev_ctx_t *ctx,
 
   switch (counter_bdr_reg1.dataready_pulsed)
   {
-    case ASM330LHB_DRDY_LATCHED:
+    case 0x00:
       *val = ASM330LHB_DRDY_LATCHED;
       break;
 
-    case ASM330LHB_DRDY_PULSED:
+    case 0x01:
       *val = ASM330LHB_DRDY_PULSED;
       break;
 
@@ -2435,15 +2437,15 @@ int32_t asm330lhb_xl_self_test_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl5_c.st_xl)
   {
-    case ASM330LHB_XL_ST_DISABLE:
+    case 0x00:
       *val = ASM330LHB_XL_ST_DISABLE;
       break;
 
-    case ASM330LHB_XL_ST_POSITIVE:
+    case 0x01:
       *val = ASM330LHB_XL_ST_POSITIVE;
       break;
 
-    case ASM330LHB_XL_ST_NEGATIVE:
+    case 0x02:
       *val = ASM330LHB_XL_ST_NEGATIVE;
       break;
 
@@ -2505,15 +2507,15 @@ int32_t asm330lhb_gy_self_test_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl5_c.st_g)
   {
-    case ASM330LHB_GY_ST_DISABLE:
+    case 0x00:
       *val = ASM330LHB_GY_ST_DISABLE;
       break;
 
-    case ASM330LHB_GY_ST_POSITIVE:
+    case 0x01:
       *val = ASM330LHB_GY_ST_POSITIVE;
       break;
 
-    case ASM330LHB_GY_ST_NEGATIVE:
+    case 0x03:
       *val = ASM330LHB_GY_ST_NEGATIVE;
       break;
 
@@ -2745,35 +2747,35 @@ int32_t asm330lhb_gy_lp1_bandwidth_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl6_c.ftype)
   {
-    case ASM330LHB_ULTRA_LIGHT:
+    case 0x00:
       *val = ASM330LHB_ULTRA_LIGHT;
       break;
 
-    case ASM330LHB_VERY_LIGHT:
+    case 0x01:
       *val = ASM330LHB_VERY_LIGHT;
       break;
 
-    case ASM330LHB_LIGHT:
+    case 0x02:
       *val = ASM330LHB_LIGHT;
       break;
 
-    case ASM330LHB_MEDIUM:
+    case 0x03:
       *val = ASM330LHB_MEDIUM;
       break;
 
-    case ASM330LHB_STRONG:
+    case 0x04:
       *val = ASM330LHB_STRONG;
       break;
 
-    case ASM330LHB_VERY_STRONG:
+    case 0x05:
       *val = ASM330LHB_VERY_STRONG;
       break;
 
-    case ASM330LHB_AGGRESSIVE:
+    case 0x06:
       *val = ASM330LHB_AGGRESSIVE;
       break;
 
-    case ASM330LHB_XTREME:
+    case 0x07:
       *val = ASM330LHB_XTREME;
       break;
 
@@ -2892,95 +2894,95 @@ int32_t asm330lhb_xl_hp_path_on_out_get(const stmdev_ctx_t *ctx,
            (ctrl8_xl.hp_slope_xl_en << 4) +
            ctrl8_xl.hpcf_xl))
   {
-    case ASM330LHB_HP_PATH_DISABLE_ON_OUT:
+    case 0x00:
       *val = ASM330LHB_HP_PATH_DISABLE_ON_OUT;
       break;
 
-    case ASM330LHB_SLOPE_ODR_DIV_4:
+    case 0x10:
       *val = ASM330LHB_SLOPE_ODR_DIV_4;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_10:
+    case 0x11:
       *val = ASM330LHB_HP_ODR_DIV_10;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_20:
+    case 0x12:
       *val = ASM330LHB_HP_ODR_DIV_20;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_45:
+    case 0x13:
       *val = ASM330LHB_HP_ODR_DIV_45;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_100:
+    case 0x14:
       *val = ASM330LHB_HP_ODR_DIV_100;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_200:
+    case 0x15:
       *val = ASM330LHB_HP_ODR_DIV_200;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_400:
+    case 0x16:
       *val = ASM330LHB_HP_ODR_DIV_400;
       break;
 
-    case ASM330LHB_HP_ODR_DIV_800:
+    case 0x17:
       *val = ASM330LHB_HP_ODR_DIV_800;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_10:
+    case 0x31:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_10;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_20:
+    case 0x32:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_20;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_45:
+    case 0x33:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_45;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_100:
+    case 0x34:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_100;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_200:
+    case 0x35:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_200;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_400:
+    case 0x36:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_400;
       break;
 
-    case ASM330LHB_HP_REF_MD_ODR_DIV_800:
+    case 0x37:
       *val = ASM330LHB_HP_REF_MD_ODR_DIV_800;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_10:
+    case 0x01:
       *val = ASM330LHB_LP_ODR_DIV_10;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_20:
+    case 0x02:
       *val = ASM330LHB_LP_ODR_DIV_20;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_45:
+    case 0x03:
       *val = ASM330LHB_LP_ODR_DIV_45;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_100:
+    case 0x04:
       *val = ASM330LHB_LP_ODR_DIV_100;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_200:
+    case 0x05:
       *val = ASM330LHB_LP_ODR_DIV_200;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_400:
+    case 0x06:
       *val = ASM330LHB_LP_ODR_DIV_400;
       break;
 
-    case ASM330LHB_LP_ODR_DIV_800:
+    case 0x07:
       *val = ASM330LHB_LP_ODR_DIV_800;
       break;
 
@@ -3097,11 +3099,11 @@ int32_t asm330lhb_xl_hp_path_internal_get(const stmdev_ctx_t *ctx,
 
   switch (int_cfg0.slope_fds)
   {
-    case ASM330LHB_USE_SLOPE:
+    case 0x00:
       *val = ASM330LHB_USE_SLOPE;
       break;
 
-    case ASM330LHB_USE_HPF:
+    case 0x01:
       *val = ASM330LHB_USE_HPF;
       break;
 
@@ -3167,23 +3169,23 @@ int32_t asm330lhb_gy_hp_path_internal_get(const stmdev_ctx_t *ctx,
 
   switch ((ctrl7_g.hp_en_g << 7) + ctrl7_g.hpm_g)
   {
-    case ASM330LHB_HP_FILTER_NONE:
+    case 0x00:
       *val = ASM330LHB_HP_FILTER_NONE;
       break;
 
-    case ASM330LHB_HP_FILTER_16mHz:
+    case 0x80:
       *val = ASM330LHB_HP_FILTER_16mHz;
       break;
 
-    case ASM330LHB_HP_FILTER_65mHz:
+    case 0x81:
       *val = ASM330LHB_HP_FILTER_65mHz;
       break;
 
-    case ASM330LHB_HP_FILTER_260mHz:
+    case 0x82:
       *val = ASM330LHB_HP_FILTER_260mHz;
       break;
 
-    case ASM330LHB_HP_FILTER_1Hz04:
+    case 0x83:
       *val = ASM330LHB_HP_FILTER_1Hz04;
       break;
 
@@ -3258,11 +3260,11 @@ int32_t asm330lhb_sdo_sa0_mode_get(const stmdev_ctx_t *ctx,
 
   switch (pin_ctrl.sdo_pu_en)
   {
-    case ASM330LHB_PULL_UP_DISC:
+    case 0x00:
       *val = ASM330LHB_PULL_UP_DISC;
       break;
 
-    case ASM330LHB_PULL_UP_CONNECT:
+    case 0x01:
       *val = ASM330LHB_PULL_UP_CONNECT;
       break;
 
@@ -3324,11 +3326,11 @@ int32_t asm330lhb_int1_mode_get(const stmdev_ctx_t *ctx,
 
   switch (i3c_bus_avb.pd_dis_int1)
   {
-    case ASM330LHB_PULL_DOWN_CONNECT:
+    case 0x00:
       *val = ASM330LHB_PULL_DOWN_CONNECT;
       break;
 
-    case ASM330LHB_PULL_DOWN_DISC:
+    case 0x01:
       *val = ASM330LHB_PULL_DOWN_DISC;
       break;
 
@@ -3390,11 +3392,11 @@ int32_t asm330lhb_spi_mode_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl3_c.sim)
   {
-    case ASM330LHB_SPI_4_WIRE:
+    case 0x00:
       *val = ASM330LHB_SPI_4_WIRE;
       break;
 
-    case ASM330LHB_SPI_3_WIRE:
+    case 0x01:
       *val = ASM330LHB_SPI_3_WIRE;
       break;
 
@@ -3456,11 +3458,11 @@ int32_t asm330lhb_i2c_interface_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl4_c.i2c_disable)
   {
-    case ASM330LHB_I2C_ENABLE:
+    case 0x00:
       *val = ASM330LHB_I2C_ENABLE;
       break;
 
-    case ASM330LHB_I2C_DISABLE:
+    case 0x01:
       *val = ASM330LHB_I2C_DISABLE;
       break;
 
@@ -3538,23 +3540,23 @@ int32_t asm330lhb_i3c_disable_get(const stmdev_ctx_t *ctx,
 
   switch ((ctrl9_xl.i3c_disable << 7) + i3c_bus_avb.i3c_bus_avb_sel)
   {
-    case ASM330LHB_I3C_DISABLE:
+    case 0x80:
       *val = ASM330LHB_I3C_DISABLE;
       break;
 
-    case ASM330LHB_I3C_ENABLE_T_50us:
+    case 0x00:
       *val = ASM330LHB_I3C_ENABLE_T_50us;
       break;
 
-    case ASM330LHB_I3C_ENABLE_T_2us:
+    case 0x01:
       *val = ASM330LHB_I3C_ENABLE_T_2us;
       break;
 
-    case ASM330LHB_I3C_ENABLE_T_1ms:
+    case 0x02:
       *val = ASM330LHB_I3C_ENABLE_T_1ms;
       break;
 
-    case ASM330LHB_I3C_ENABLE_T_25ms:
+    case 0x03:
       *val = ASM330LHB_I3C_ENABLE_T_25ms;
       break;
 
@@ -4018,11 +4020,11 @@ int32_t asm330lhb_pin_mode_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl3_c.pp_od)
   {
-    case ASM330LHB_PUSH_PULL:
+    case 0x00:
       *val = ASM330LHB_PUSH_PULL;
       break;
 
-    case ASM330LHB_OPEN_DRAIN:
+    case 0x01:
       *val = ASM330LHB_OPEN_DRAIN;
       break;
 
@@ -4084,11 +4086,11 @@ int32_t asm330lhb_pin_polarity_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl3_c.h_lactive)
   {
-    case ASM330LHB_ACTIVE_HIGH:
+    case 0x00:
       *val = ASM330LHB_ACTIVE_HIGH;
       break;
 
-    case ASM330LHB_ACTIVE_LOW:
+    case 0x01:
       *val = ASM330LHB_ACTIVE_LOW;
       break;
 
@@ -4233,16 +4235,16 @@ int32_t asm330lhb_int_notification_get(const stmdev_ctx_t *ctx,
 
   switch ((page_rw.emb_func_lir << 1) + int_cfg0.lir)
   {
-    case ASM330LHB_ALL_INT_PULSED:
+    case 0x00:
       *val = ASM330LHB_ALL_INT_PULSED;
       break;
-    case ASM330LHB_BASE_LATCHED_EMB_PULSED:
+    case 0x01:
       *val = ASM330LHB_BASE_LATCHED_EMB_PULSED;
       break;
-    case ASM330LHB_BASE_PULSED_EMB_LATCHED:
+    case 0x02:
       *val = ASM330LHB_BASE_PULSED_EMB_LATCHED;
       break;
-    case ASM330LHB_ALL_INT_LATCHED:
+    case 0x03:
       *val = ASM330LHB_ALL_INT_LATCHED;
       break;
     default:
@@ -4319,11 +4321,11 @@ int32_t asm330lhb_wkup_ths_weight_get(const stmdev_ctx_t *ctx,
 
   switch (wake_up_dur.wake_ths_w)
   {
-    case ASM330LHB_LSb_FS_DIV_64:
+    case 0x00:
       *val = ASM330LHB_LSb_FS_DIV_64;
       break;
 
-    case ASM330LHB_LSb_FS_DIV_256:
+    case 0x01:
       *val = ASM330LHB_LSb_FS_DIV_256;
       break;
 
@@ -4608,11 +4610,11 @@ int32_t asm330lhb_act_pin_notification_get(const stmdev_ctx_t *ctx,
 
   switch (int_cfg0.sleep_status_on_int)
   {
-    case ASM330LHB_DRIVE_SLEEP_CHG_EVENT:
+    case 0x00:
       *val = ASM330LHB_DRIVE_SLEEP_CHG_EVENT;
       break;
 
-    case ASM330LHB_DRIVE_SLEEP_STATUS:
+    case 0x01:
       *val = ASM330LHB_DRIVE_SLEEP_STATUS;
       break;
 
@@ -4671,19 +4673,19 @@ int32_t asm330lhb_act_mode_get(const stmdev_ctx_t *ctx,
 
   switch (int_cfg1.inact_en)
   {
-    case ASM330LHB_XL_AND_GY_NOT_AFFECTED:
+    case 0x00:
       *val = ASM330LHB_XL_AND_GY_NOT_AFFECTED;
       break;
 
-    case ASM330LHB_XL_12Hz5_GY_NOT_AFFECTED:
+    case 0x01:
       *val = ASM330LHB_XL_12Hz5_GY_NOT_AFFECTED;
       break;
 
-    case ASM330LHB_XL_12Hz5_GY_SLEEP:
+    case 0x02:
       *val = ASM330LHB_XL_12Hz5_GY_SLEEP;
       break;
 
-    case ASM330LHB_XL_12Hz5_GY_PD:
+    case 0x03:
       *val = ASM330LHB_XL_12Hz5_GY_PD;
       break;
 
@@ -4809,19 +4811,19 @@ int32_t asm330lhb_6d_threshold_get(const stmdev_ctx_t *ctx,
 
   switch (ths_6d.sixd_ths)
   {
-    case ASM330LHB_DEG_80:
+    case 0x00:
       *val = ASM330LHB_DEG_80;
       break;
 
-    case ASM330LHB_DEG_70:
+    case 0x01:
       *val = ASM330LHB_DEG_70;
       break;
 
-    case ASM330LHB_DEG_60:
+    case 0x02:
       *val = ASM330LHB_DEG_60;
       break;
 
-    case ASM330LHB_DEG_50:
+    case 0x03:
       *val = ASM330LHB_DEG_50;
       break;
 
@@ -4947,35 +4949,35 @@ int32_t asm330lhb_ff_threshold_get(const stmdev_ctx_t *ctx,
 
   switch (free_fall.ff_ths)
   {
-    case ASM330LHB_FF_TSH_156mg:
+    case 0x00:
       *val = ASM330LHB_FF_TSH_156mg;
       break;
 
-    case ASM330LHB_FF_TSH_219mg:
+    case 0x01:
       *val = ASM330LHB_FF_TSH_219mg;
       break;
 
-    case ASM330LHB_FF_TSH_250mg:
+    case 0x02:
       *val = ASM330LHB_FF_TSH_250mg;
       break;
 
-    case ASM330LHB_FF_TSH_312mg:
+    case 0x03:
       *val = ASM330LHB_FF_TSH_312mg;
       break;
 
-    case ASM330LHB_FF_TSH_344mg:
+    case 0x04:
       *val = ASM330LHB_FF_TSH_344mg;
       break;
 
-    case ASM330LHB_FF_TSH_406mg:
+    case 0x05:
       *val = ASM330LHB_FF_TSH_406mg;
       break;
 
-    case ASM330LHB_FF_TSH_469mg:
+    case 0x06:
       *val = ASM330LHB_FF_TSH_469mg;
       break;
 
-    case ASM330LHB_FF_TSH_500mg:
+    case 0x07:
       *val = ASM330LHB_FF_TSH_500mg;
       break;
 
@@ -5290,43 +5292,43 @@ int32_t asm330lhb_fifo_xl_batch_get(const stmdev_ctx_t *ctx,
 
   switch (fifo_ctrl3.bdr_xl)
   {
-    case 0:
+    case 0x00:
       *val = ASM330LHB_XL_NOT_BATCHED;
       break;
 
-    case 1:
+    case 0x01:
       *val = ASM330LHB_XL_BATCHED_AT_12Hz5;
       break;
 
-    case 2:
+    case 0x02:
       *val = ASM330LHB_XL_BATCHED_AT_26Hz;
       break;
 
-    case 3:
+    case 0x03:
       *val = ASM330LHB_XL_BATCHED_AT_52Hz;
       break;
 
-    case 4:
+    case 0x04:
       *val = ASM330LHB_XL_BATCHED_AT_104Hz;
       break;
 
-    case 5:
+    case 0x05:
       *val = ASM330LHB_XL_BATCHED_AT_208Hz;
       break;
 
-    case 6:
+    case 0x06:
       *val = ASM330LHB_XL_BATCHED_AT_417Hz;
       break;
 
-    case 7:
+    case 0x07:
       *val = ASM330LHB_XL_BATCHED_AT_833Hz;
       break;
 
-    case 8:
+    case 0x08:
       *val = ASM330LHB_XL_BATCHED_AT_1667Hz;
       break;
 
-    case 11:
+    case 0x0B:
       *val = ASM330LHB_XL_BATCHED_AT_1Hz6;
       break;
 
@@ -5390,43 +5392,43 @@ int32_t asm330lhb_fifo_gy_batch_get(const stmdev_ctx_t *ctx,
 
   switch (fifo_ctrl3.bdr_gy)
   {
-    case ASM330LHB_GY_NOT_BATCHED:
+    case 0x00:
       *val = ASM330LHB_GY_NOT_BATCHED;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_12Hz5:
+    case 0x01:
       *val = ASM330LHB_GY_BATCHED_AT_12Hz5;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_26Hz:
+    case 0x02:
       *val = ASM330LHB_GY_BATCHED_AT_26Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_52Hz:
+    case 0x03:
       *val = ASM330LHB_GY_BATCHED_AT_52Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_104Hz:
+    case 0x04:
       *val = ASM330LHB_GY_BATCHED_AT_104Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_208Hz:
+    case 0x05:
       *val = ASM330LHB_GY_BATCHED_AT_208Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_417Hz:
+    case 0x06:
       *val = ASM330LHB_GY_BATCHED_AT_417Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_833Hz:
+    case 0x07:
       *val = ASM330LHB_GY_BATCHED_AT_833Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_1667Hz:
+    case 0x08:
       *val = ASM330LHB_GY_BATCHED_AT_1667Hz;
       break;
 
-    case ASM330LHB_GY_BATCHED_AT_6Hz5:
+    case 0x0B:
       *val = ASM330LHB_GY_BATCHED_AT_6Hz5;
       break;
 
@@ -5488,27 +5490,27 @@ int32_t asm330lhb_fifo_mode_get(const stmdev_ctx_t *ctx,
 
   switch (fifo_ctrl4.fifo_mode)
   {
-    case ASM330LHB_BYPASS_MODE:
+    case 0x00:
       *val = ASM330LHB_BYPASS_MODE;
       break;
 
-    case ASM330LHB_FIFO_MODE:
+    case 0x01:
       *val = ASM330LHB_FIFO_MODE;
       break;
 
-    case ASM330LHB_STREAM_TO_FIFO_MODE:
+    case 0x03:
       *val = ASM330LHB_STREAM_TO_FIFO_MODE;
       break;
 
-    case ASM330LHB_BYPASS_TO_STREAM_MODE:
+    case 0x04:
       *val = ASM330LHB_BYPASS_TO_STREAM_MODE;
       break;
 
-    case ASM330LHB_STREAM_MODE:
+    case 0x06:
       *val = ASM330LHB_STREAM_MODE;
       break;
 
-    case ASM330LHB_BYPASS_TO_FIFO_MODE:
+    case 0x07:
       *val = ASM330LHB_BYPASS_TO_FIFO_MODE;
       break;
 
@@ -5572,19 +5574,19 @@ int32_t asm330lhb_fifo_temp_batch_get(const stmdev_ctx_t *ctx,
 
   switch (fifo_ctrl4.odr_t_batch)
   {
-    case ASM330LHB_TEMP_NOT_BATCHED:
+    case 0x00:
       *val = ASM330LHB_TEMP_NOT_BATCHED;
       break;
 
-    case ASM330LHB_TEMP_BATCHED_AT_52Hz:
+    case 0x03:
       *val = ASM330LHB_TEMP_BATCHED_AT_52Hz;
       break;
 
-    case ASM330LHB_TEMP_BATCHED_AT_12Hz5:
+    case 0x02:
       *val = ASM330LHB_TEMP_BATCHED_AT_12Hz5;
       break;
 
-    case ASM330LHB_TEMP_BATCHED_AT_1Hz6:
+    case 0x01:
       *val = ASM330LHB_TEMP_BATCHED_AT_1Hz6;
       break;
 
@@ -5651,19 +5653,19 @@ int32_t asm330lhb_fifo_timestamp_decimation_get(const stmdev_ctx_t *ctx,
 
   switch (fifo_ctrl4.dec_ts_batch)
   {
-    case ASM330LHB_NO_DECIMATION:
+    case 0x00:
       *val = ASM330LHB_NO_DECIMATION;
       break;
 
-    case ASM330LHB_DEC_1:
+    case 0x01:
       *val = ASM330LHB_DEC_1;
       break;
 
-    case ASM330LHB_DEC_8:
+    case 0x02:
       *val = ASM330LHB_DEC_8;
       break;
 
-    case ASM330LHB_DEC_32:
+    case 0x03:
       *val = ASM330LHB_DEC_32;
       break;
 
@@ -5729,11 +5731,11 @@ int32_t asm330lhb_fifo_cnt_event_batch_get(const stmdev_ctx_t *ctx,
 
   switch (counter_bdr_reg1.trig_counter_bdr)
   {
-    case ASM330LHB_XL_BATCH_EVENT:
+    case 0x00:
       *val = ASM330LHB_XL_BATCH_EVENT;
       break;
 
-    case ASM330LHB_GYRO_BATCH_EVENT:
+    case 0x01:
       *val = ASM330LHB_GYRO_BATCH_EVENT;
       break;
 
@@ -6109,23 +6111,23 @@ int32_t asm330lhb_den_mode_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl6_c.den_mode)
   {
-    case ASM330LHB_DEN_DISABLE:
+    case 0x00:
       *val = ASM330LHB_DEN_DISABLE;
       break;
 
-    case ASM330LHB_LEVEL_FIFO:
+    case 0x06:
       *val = ASM330LHB_LEVEL_FIFO;
       break;
 
-    case ASM330LHB_LEVEL_LETCHED:
+    case 0x03:
       *val = ASM330LHB_LEVEL_LETCHED;
       break;
 
-    case ASM330LHB_LEVEL_TRIGGER:
+    case 0x02:
       *val = ASM330LHB_LEVEL_TRIGGER;
       break;
 
-    case ASM330LHB_EDGE_TRIGGER:
+    case 0x04:
       *val = ASM330LHB_EDGE_TRIGGER;
       break;
 
@@ -6187,11 +6189,11 @@ int32_t asm330lhb_den_polarity_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl9_xl.den_lh)
   {
-    case ASM330LHB_DEN_ACT_LOW:
+    case 0x00:
       *val = ASM330LHB_DEN_ACT_LOW;
       break;
 
-    case ASM330LHB_DEN_ACT_HIGH:
+    case 0x01:
       *val = ASM330LHB_DEN_ACT_HIGH;
       break;
 
@@ -6253,15 +6255,15 @@ int32_t asm330lhb_den_enable_get(const stmdev_ctx_t *ctx,
 
   switch (ctrl9_xl.den_xl_g)
   {
-    case ASM330LHB_STAMP_IN_GY_DATA:
+    case 0x00:
       *val = ASM330LHB_STAMP_IN_GY_DATA;
       break;
 
-    case ASM330LHB_STAMP_IN_XL_DATA:
+    case 0x02:
       *val = ASM330LHB_STAMP_IN_XL_DATA;
       break;
 
-    case ASM330LHB_STAMP_IN_GY_XL_DATA:
+    case 0x01:
       *val = ASM330LHB_STAMP_IN_GY_XL_DATA;
       break;
 
@@ -6859,15 +6861,15 @@ int32_t asm330lhb_long_clr_get(const stmdev_ctx_t *ctx,
 
   switch (fsm_long_counter_clear.fsm_lc_clr)
   {
-    case ASM330LHB_LC_NORMAL:
+    case 0x00:
       *val = ASM330LHB_LC_NORMAL;
       break;
 
-    case ASM330LHB_LC_CLEAR:
+    case 0x01:
       *val = ASM330LHB_LC_CLEAR;
       break;
 
-    case ASM330LHB_LC_CLEAR_DONE:
+    case 0x02:
       *val = ASM330LHB_LC_CLEAR_DONE;
       break;
 
@@ -6972,19 +6974,19 @@ int32_t asm330lhb_fsm_data_rate_get(const stmdev_ctx_t *ctx,
 
   switch (emb_func_odr_cfg_b.fsm_odr)
   {
-    case ASM330LHB_ODR_FSM_12Hz5:
+    case 0x00:
       *val = ASM330LHB_ODR_FSM_12Hz5;
       break;
 
-    case ASM330LHB_ODR_FSM_26Hz:
+    case 0x01:
       *val = ASM330LHB_ODR_FSM_26Hz;
       break;
 
-    case ASM330LHB_ODR_FSM_52Hz:
+    case 0x02:
       *val = ASM330LHB_ODR_FSM_52Hz;
       break;
 
-    case ASM330LHB_ODR_FSM_104Hz:
+    case 0x03:
       *val = ASM330LHB_ODR_FSM_104Hz;
       break;
 
@@ -7387,19 +7389,19 @@ int32_t asm330lhb_mlc_data_rate_get(const stmdev_ctx_t *ctx,
   {
     switch (reg.mlc_odr)
     {
-      case ASM330LHB_ODR_PRGS_12Hz5:
+      case 0x00:
         *val = ASM330LHB_ODR_PRGS_12Hz5;
         break;
 
-      case ASM330LHB_ODR_PRGS_26Hz:
+      case 0x01:
         *val = ASM330LHB_ODR_PRGS_26Hz;
         break;
 
-      case ASM330LHB_ODR_PRGS_52Hz:
+      case 0x02:
         *val = ASM330LHB_ODR_PRGS_52Hz;
         break;
 
-      case ASM330LHB_ODR_PRGS_104Hz:
+      case 0x03:
         *val = ASM330LHB_ODR_PRGS_104Hz;
         break;
 
