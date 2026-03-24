@@ -298,6 +298,10 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_12Hz5;
             }
+            else
+            {
+              /* No action needed */
+            }
 
             break;
 
@@ -306,10 +310,13 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_26Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_12Hz5)
             {
               odr_xl = ASM330LHB_XL_ODR_26Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -319,15 +326,17 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_52Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_12Hz5)
             {
               odr_xl = ASM330LHB_XL_ODR_52Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_26Hz)
             {
               odr_xl = ASM330LHB_XL_ODR_52Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -337,20 +346,21 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_12Hz5)
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_26Hz)
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_52Hz)
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -382,6 +392,10 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_12Hz5;
             }
+            else
+            {
+              /* No action needed */
+            }
 
             break;
 
@@ -390,10 +404,13 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_26Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_12Hz5)
             {
               odr_xl = ASM330LHB_XL_ODR_26Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -403,15 +420,17 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_52Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_12Hz5)
             {
               odr_xl = ASM330LHB_XL_ODR_52Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_26Hz)
             {
               odr_xl = ASM330LHB_XL_ODR_52Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -421,20 +440,21 @@ int32_t asm330lhb_xl_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_12Hz5)
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_26Hz)
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
             }
-
             else if (odr_xl == ASM330LHB_XL_ODR_52Hz)
             {
               odr_xl = ASM330LHB_XL_ODR_104Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -517,7 +537,7 @@ int32_t asm330lhb_xl_data_rate_get(const stmdev_ctx_t *ctx,
       *val = ASM330LHB_XL_ODR_1667Hz;
       break;
 
-    case 0x11:
+    case 0x0B:
       *val = ASM330LHB_XL_ODR_1Hz6;
       break;
 
@@ -593,7 +613,7 @@ int32_t asm330lhb_gy_full_scale_get(const stmdev_ctx_t *ctx,
       *val = ASM330LHB_1000dps;
       break;
 
-    case 0x12:
+    case 0x0C:
       *val = ASM330LHB_2000dps;
       break;
 
@@ -661,6 +681,10 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_12Hz5;
             }
+            else
+            {
+              /* No action needed */
+            }
 
             break;
 
@@ -669,10 +693,13 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_26Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_12Hz5)
             {
               odr_gy = ASM330LHB_GY_ODR_26Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -682,15 +709,17 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_52Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_12Hz5)
             {
               odr_gy = ASM330LHB_GY_ODR_52Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_26Hz)
             {
               odr_gy = ASM330LHB_GY_ODR_52Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -700,20 +729,21 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_12Hz5)
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_26Hz)
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_52Hz)
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -741,6 +771,10 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_12Hz5;
             }
+            else
+            {
+              /* No action needed */
+            }
 
             break;
 
@@ -749,10 +783,13 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_26Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_12Hz5)
             {
               odr_gy = ASM330LHB_GY_ODR_26Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -762,15 +799,17 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_52Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_12Hz5)
             {
               odr_gy = ASM330LHB_GY_ODR_52Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_26Hz)
             {
               odr_gy = ASM330LHB_GY_ODR_52Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -780,20 +819,21 @@ int32_t asm330lhb_gy_data_rate_set(const stmdev_ctx_t *ctx,
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_12Hz5)
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_26Hz)
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
             }
-
             else if (odr_gy == ASM330LHB_GY_ODR_52Hz)
             {
               odr_gy = ASM330LHB_GY_ODR_104Hz;
+            }
+            else
+            {
+              /* No action needed */
             }
 
             break;
@@ -1337,11 +1377,11 @@ int32_t asm330lhb_boot_device_status_get(const stmdev_ctx_t *ctx, uint8_t *val)
   *
   */
 int32_t asm330lhb_xl_usr_offset_x_set(const stmdev_ctx_t *ctx,
-                                      int8_t *buff)
+                                      int8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_X_OFS_USR, buff, 1);
+  ret = asm330lhb_write_reg(ctx, ASM330LHB_X_OFS_USR, val, 1);
 
   return ret;
 }
@@ -1357,11 +1397,11 @@ int32_t asm330lhb_xl_usr_offset_x_set(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_xl_usr_offset_x_get(const stmdev_ctx_t *ctx,
-                                      int8_t *buff)
+                                      int8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_X_OFS_USR, buff, 1);
+  ret = asm330lhb_read_reg(ctx, ASM330LHB_X_OFS_USR, val, 1);
 
   return ret;
 }
@@ -1377,11 +1417,11 @@ int32_t asm330lhb_xl_usr_offset_x_get(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_xl_usr_offset_y_set(const stmdev_ctx_t *ctx,
-                                      int8_t *buff)
+                                      int8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_Y_OFS_USR, buff, 1);
+  ret = asm330lhb_write_reg(ctx, ASM330LHB_Y_OFS_USR, val, 1);
 
   return ret;
 }
@@ -1397,11 +1437,11 @@ int32_t asm330lhb_xl_usr_offset_y_set(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_xl_usr_offset_y_get(const stmdev_ctx_t *ctx,
-                                      int8_t *buff)
+                                      int8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_Y_OFS_USR, buff, 1);
+  ret = asm330lhb_read_reg(ctx, ASM330LHB_Y_OFS_USR, val, 1);
 
   return ret;
 }
@@ -1417,11 +1457,11 @@ int32_t asm330lhb_xl_usr_offset_y_get(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_xl_usr_offset_z_set(const stmdev_ctx_t *ctx,
-                                      int8_t *buff)
+                                      int8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_write_reg(ctx, ASM330LHB_Z_OFS_USR, buff, 1);
+  ret = asm330lhb_write_reg(ctx, ASM330LHB_Z_OFS_USR, val, 1);
 
   return ret;
 }
@@ -1437,11 +1477,11 @@ int32_t asm330lhb_xl_usr_offset_z_set(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_xl_usr_offset_z_get(const stmdev_ctx_t *ctx,
-                                      int8_t *buff)
+                                      int8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_Z_OFS_USR, buff, 1);
+  ret = asm330lhb_read_reg(ctx, ASM330LHB_Z_OFS_USR, val, 1);
 
   return ret;
 }
@@ -1787,11 +1827,11 @@ int32_t asm330lhb_acceleration_raw_get(const stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t asm330lhb_fifo_out_raw_get(const stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t asm330lhb_fifo_out_raw_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_FIFO_DATA_OUT_X_L, buff, 6);
+  ret = asm330lhb_read_reg(ctx, ASM330LHB_FIFO_DATA_OUT_X_L, val, 6);
 
   return ret;
 }
@@ -2227,11 +2267,11 @@ int32_t asm330lhb_data_ready_mode_get(const stmdev_ctx_t *ctx,
   * @retval        Interface status (MANDATORY: return 0 -> no Error).
   *
   */
-int32_t asm330lhb_device_id_get(const stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t asm330lhb_device_id_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_read_reg(ctx, ASM330LHB_WHO_AM_I, buff, 1);
+  ret = asm330lhb_read_reg(ctx, ASM330LHB_WHO_AM_I, val, 1);
 
   return ret;
 }
@@ -2910,7 +2950,7 @@ int32_t asm330lhb_xl_hp_path_on_out_get(const stmdev_ctx_t *ctx,
   asm330lhb_ctrl1_xl_t ctrl1_xl = {0};
   asm330lhb_ctrl8_xl_t ctrl8_xl = {0};
   int32_t ret = {0};
-  uint8_t is_low_pass = 0;
+  uint8_t is_low_pass = 0u;
 
   ret = asm330lhb_read_reg(ctx, ASM330LHB_CTRL1_XL,
                            (uint8_t *)&ctrl1_xl, 1);
@@ -2926,50 +2966,50 @@ int32_t asm330lhb_xl_hp_path_on_out_get(const stmdev_ctx_t *ctx,
     return ret;
   }
 
-  if (ctrl8_xl.hp_slope_xl_en == 0 && ctrl1_xl.lpf2_xl_en == 0)
+  if (ctrl8_xl.hp_slope_xl_en == 0u && ctrl1_xl.lpf2_xl_en == 0u)
   {
     *val = ASM330LHB_LP_ODR_DIV_2;
   }
   else
   {
-    is_low_pass = ctrl8_xl.hp_slope_xl_en == 0 ? 1 : 0;
+    is_low_pass = ctrl8_xl.hp_slope_xl_en == 0u ? 1u : 0u;
 
     switch (ctrl8_xl.hpcf_xl)
     {
       case 0x00:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_4 : ASM330LHB_SLOPE_ODR_DIV_4;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_4 : ASM330LHB_SLOPE_ODR_DIV_4;
         break;
 
       case 0x01:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_10 : ASM330LHB_HP_ODR_DIV_10;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_10 : ASM330LHB_HP_ODR_DIV_10;
         break;
 
       case 0x02:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_20 : ASM330LHB_HP_ODR_DIV_20;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_20 : ASM330LHB_HP_ODR_DIV_20;
         break;
 
       case 0x03:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_45 : ASM330LHB_HP_ODR_DIV_45;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_45 : ASM330LHB_HP_ODR_DIV_45;
         break;
 
       case 0x04:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_100 : ASM330LHB_HP_ODR_DIV_100;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_100 : ASM330LHB_HP_ODR_DIV_100;
         break;
 
       case 0x05:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_200 : ASM330LHB_HP_ODR_DIV_200;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_200 : ASM330LHB_HP_ODR_DIV_200;
         break;
 
       case 0x06:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_400 : ASM330LHB_HP_ODR_DIV_400;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_400 : ASM330LHB_HP_ODR_DIV_400;
         break;
 
       case 0x07:
-        if (is_low_pass)
+        if (is_low_pass == 1u)
         {
           *val = ASM330LHB_LP_ODR_DIV_800;
         }
-        else if (ctrl8_xl.hp_ref_mode_xl == 1)
+        else if (ctrl8_xl.hp_ref_mode_xl == 1u)
         {
           // The application note requires the HPCF_XL field to be set to 111
           // in order to enable HP_REF_MODE.
@@ -2982,7 +3022,7 @@ int32_t asm330lhb_xl_hp_path_on_out_get(const stmdev_ctx_t *ctx,
         break;
 
       default:
-        *val = is_low_pass ? ASM330LHB_LP_ODR_DIV_4 : ASM330LHB_SLOPE_ODR_DIV_4;
+        *val = is_low_pass == 1u ? ASM330LHB_LP_ODR_DIV_4 : ASM330LHB_SLOPE_ODR_DIV_4;
         break;
     }
   }
@@ -5907,7 +5947,7 @@ int32_t asm330lhb_fifo_status_get(const stmdev_ctx_t *ctx,
                                   asm330lhb_fifo_status2_t *val)
 {
   uint8_t reg[2] = {0};
-  asm330lhb_fifo_status2_t *fifo_status2 = (asm330lhb_fifo_status2_t *)&reg[1];
+  const asm330lhb_fifo_status2_t *fifo_status2 = (asm330lhb_fifo_status2_t *)&reg[1];
   int32_t ret = {0};
 
   /* read both FIFO_STATUS1 + FIFO_STATUS2 regs */
@@ -5931,7 +5971,7 @@ int32_t asm330lhb_fifo_status_get(const stmdev_ctx_t *ctx,
 int32_t asm330lhb_fifo_full_flag_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   uint8_t reg[2] = {0};
-  asm330lhb_fifo_status2_t *fifo_status2 = (asm330lhb_fifo_status2_t *)&reg[1];
+  const asm330lhb_fifo_status2_t *fifo_status2 = (asm330lhb_fifo_status2_t *)&reg[1];
   int32_t ret = {0};
 
   /* read both FIFO_STATUS1 + FIFO_STATUS2 regs */
@@ -6890,7 +6930,7 @@ int32_t asm330lhb_long_clr_get(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_fsm_out_get(const stmdev_ctx_t *ctx,
-                              uint8_t *buff)
+                              uint8_t *val)
 {
   int32_t ret = {0};
 
@@ -6898,7 +6938,7 @@ int32_t asm330lhb_fsm_out_get(const stmdev_ctx_t *ctx,
 
   if (ret == 0)
   {
-    ret = asm330lhb_read_reg(ctx, ASM330LHB_FSM_OUTS1, buff, 16);
+    ret = asm330lhb_read_reg(ctx, ASM330LHB_FSM_OUTS1, val, 16);
   }
 
   ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
@@ -7135,11 +7175,11 @@ int32_t asm330lhb_long_cnt_int_value_get(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_fsm_number_of_programs_set(const stmdev_ctx_t *ctx,
-                                             uint8_t *buff)
+                                             uint8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_ln_pg_write_byte(ctx, ASM330LHB_FSM_PROGRAMS, buff);
+  ret = asm330lhb_ln_pg_write_byte(ctx, ASM330LHB_FSM_PROGRAMS, val);
 
   return ret;
 }
@@ -7153,11 +7193,11 @@ int32_t asm330lhb_fsm_number_of_programs_set(const stmdev_ctx_t *ctx,
   *
   */
 int32_t asm330lhb_fsm_number_of_programs_get(const stmdev_ctx_t *ctx,
-                                             uint8_t *buff)
+                                             uint8_t *val)
 {
   int32_t ret = {0};
 
-  ret = asm330lhb_ln_pg_read_byte(ctx, ASM330LHB_FSM_PROGRAMS, buff);
+  ret = asm330lhb_ln_pg_read_byte(ctx, ASM330LHB_FSM_PROGRAMS, val);
 
   return ret;
 }
@@ -7484,7 +7524,7 @@ int32_t asm330lhb_mlc_init_get(const stmdev_ctx_t *ctx, uint8_t *val)
   * @param  uint8_t * : buffer that stores data read
   *
   */
-int32_t asm330lhb_mlc_out_get(const stmdev_ctx_t *ctx, uint8_t *buff)
+int32_t asm330lhb_mlc_out_get(const stmdev_ctx_t *ctx, uint8_t *val)
 {
   int32_t ret = {0};
 
@@ -7492,7 +7532,7 @@ int32_t asm330lhb_mlc_out_get(const stmdev_ctx_t *ctx, uint8_t *buff)
 
   if (ret == 0)
   {
-    ret = asm330lhb_read_reg(ctx, ASM330LHB_MLC0_SRC, buff, 8);
+    ret = asm330lhb_read_reg(ctx, ASM330LHB_MLC0_SRC, val, 8);
   }
 
   ret += asm330lhb_mem_bank_set(ctx, ASM330LHB_USER_BANK);
