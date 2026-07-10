@@ -30,7 +30,18 @@ This directory contains the ASM330LHB component drivers.
 # Update history
 
 ::: {.collapse}
-<input type="checkbox" id="collapse-section7" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section8" checked aria-hidden="true">
+<label for="collapse-section8" aria-hidden="true">V2.4.1 / 10-Jul-2026</label>
+<div>
+
+## Main changes
+
+- Fix build in xl/gy data_rate_set API
+
+##
+</div>
+
+<input type="checkbox" id="collapse-section7" aria-hidden="true">
 <label for="collapse-section7" aria-hidden="true">V2.4.0 / 18-Mar-2026</label>
 <div>
 
